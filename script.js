@@ -1,22 +1,24 @@
 'use strict';
 
-let Data = new Date();
-let Year = Data.getFullYear();
-let Month = Data.getMonth();
-let Day = Data.getDate();
+let money = prompt("Ваш бюджет на месяц?", ''),
+    time = prompt("Введите дату в формате YYYY-MM-DD", '');
 
-let money = +prompt("Ваш бюджет на месяц?", "0");
-let time = prompt("Введите дату в формате YYYY-MM-DD", Year+"-"+Month+"-"+Day);
 let appData = {
     budget: money,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
     timeData: time,
-    expenses: 0,
-    optionalExpenses: [],
-    income: 0,
     savings: false
 }
-appData.optionalExpenses = prompt("Введите обязательную статью расходов в этом месяце", 0);
-appData.optionalExpenses = appData.optionalExpenses+":"+prompt("“Во сколько обойдется?”", 0);
 
-alert(money/30);
+let a1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
+    a2 = prompt("Во сколько обойдется?", ''),
+    a3 = prompt("Введите обязательную статью расходов в этом месяце", ''),
+    a4 = prompt("Во сколько обойдется?", '');
+
+appData.expenses.a1 = a2;
+appData.expenses.a3 = a4;
+
+alert(appData.budget/30);
 console.log(appData);
